@@ -1,7 +1,0 @@
-SELECT *
-      FROM (
-      SELECT  DISTINCT FORMAT_TIMESTAMP('%Y%m', PARSE_DATE('%Y%m%d', date)) AS month, COUNT(totals.visits) AS visits, SUM(totals.pageviews) AS pageviews, COUNT(totals.transactions) AS transactions
-      FROM `bigquery-public-data.google_analytics_sample.ga_sessions_2017*`
-      WHERE _table_suffix between '0101'and '0331'
-      GROUP BY FORMAT_TIMESTAMP('%Y%m', PARSE_DATE('%Y%m%d', date))) AS ga_session1
-      ORDER BY ga_session1.month;
