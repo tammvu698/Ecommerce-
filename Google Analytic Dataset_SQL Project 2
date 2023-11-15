@@ -9,7 +9,7 @@ LEFT JOIN  `adventureworks2019.Production.ProductSubcategory` s ON SAFE_CAST(p.P
 GROUP BY 1, 2
 ORDER BY 2;
 
-#Calculate % YoY growth rate by SubCategory & release top 3 cat with highest grow rate. Can use metric: quantity_item. Round results to 2 decimal
+#Calculate % YoY growth rate by SubCategory & release the top 3 cat with the highest grow rate. Can use metric: quantity_item. Round results to 2 decimal
 SELECT *, ROUND((qty_item-qty_prv)/qty_prv,2) AS ratio
 FROM 
   (SELECT *, 
@@ -26,7 +26,7 @@ FROM
 ORDER BY ratio DESC
 LIMIT 3;
 
-#Ranking Top 3 TeritoryID with biggest Order quantity of every year. If there's TerritoryID with same quantity in a year, do not skip the rank number
+#Ranking Top 3 TeritoryID with the biggest Order quantity every year. If there's TerritoryID with the same quantity in a year, do not skip the rank number
 
 SELECT *
 FROM 
