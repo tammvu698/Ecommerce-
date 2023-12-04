@@ -3,7 +3,7 @@
 1. Calculate total visits, pagesviews, and transactions for Jan, Feb, and March 2017 (order by month)
       SELECT *
       FROM (
-      SELECT  DISTINCT FORMAT_TIMESTAMP('%Y%m', PARSE_DATE('%Y%m%d', date)) AS month  --k cần distinct, vì sau khi sum mình cũng sẽ group lại thành 1 dòng
+      SELECT  DISTINCT FORMAT_TIMESTAMP('%Y%m', PARSE_DATE('%Y%m%d', date)) AS month
             , COUNT(totals.visits) AS visits
             , SUM(totals.pageviews) AS pageviews
             , COUNT(totals.transactions) AS transactions
